@@ -124,28 +124,35 @@
     </header>
 
     <section id="assignments" class="card">
-        <h3><i class="fas fa-list-ul"></i> Upcoming Assignments</h3>
-        <table>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3><i class="fas fa-list-ul"></i> Upcoming Assignments</h3>
+            <div>
+                <button onclick="addRow()" style="background: #28a745; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">
+                    <i class="fas fa-plus"></i> Add Assignment
+                </button>
+                <button onclick="saveTable()" style="background: var(--accent-orange); color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer;">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+            </div>
+        </div>
+        <p><small><i>* Click on any cell below to edit. Click "Save Changes" when done.</i></small></p>
+        
+        <table id="assignmentTable">
             <thead>
                 <tr>
                     <th>Module</th>
                     <th>Assignment Title</th>
                     <th>Due Date</th>
                     <th>Status</th>
-                </tr>
+                    <th>Action</th> </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Technical Writing</td>
-                    <td>Cybersecurity Lab Report</td>
-                    <td>April 5, 2026</td>
-                    <td class="status-pending">Not Submitted</td>
-                </tr>
-                <tr>
-                    <td>Business English</td>
-                    <td>Project Management Proposal</td>
-                    <td>April 12, 2026</td>
-                    <td class="status-pending">Not Submitted</td>
+                    <td contenteditable="true">Technical Writing</td>
+                    <td contenteditable="true">Cybersecurity Lab Report</td>
+                    <td contenteditable="true">April 5, 2026</td>
+                    <td contenteditable="true" class="status-pending">Not Submitted</td>
+                    <td><button onclick="deleteRow(this)" style="background:none; border:none; color:red; cursor:pointer;"><i class="fas fa-trash"></i></button></td>
                 </tr>
             </tbody>
         </table>
